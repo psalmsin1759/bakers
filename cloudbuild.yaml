@@ -8,7 +8,7 @@ steps:
       [
         'run',
         'deploy',
-        'inventro',
+        'bakers',
         '--image',
         'gcr.io/$PROJECT_ID/inventro',
         '--platform',
