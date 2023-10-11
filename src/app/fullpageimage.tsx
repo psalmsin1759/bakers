@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import * as React from 'react';
 import ReactFlagsSelect from 'react-flags-select';
+import Image from 'next/image';
 
 const FullScreenImage = () => {
   const [selected, setSelected] = useState('');
@@ -45,11 +46,13 @@ const FullScreenImage = () => {
         className="absolute w-full h-full"
         data-carousel="static"
       >
-        <img
+        {/*  <img
           src="/images/bg1.png"
           alt="Background Image"
           className="w-full h-full object-cover"
-        />
+        /> */}
+
+        <Image src="/images/bg1.png" alt="background image" layout="fill" />
 
         <button
           type="button"
@@ -100,7 +103,14 @@ const FullScreenImage = () => {
       </div>
 
       <div className="absolute top-0 left-0 m-4 z-10">
-        <img src="/images/header-logo.png" alt="Logo" className="w-400 h-108" />
+        {/*  <img src="/images/header-logo.png" alt="Logo" className="w-400 h-108" /> */}
+        <Image
+          src="/images/header-logo.png"
+          alt="background image"
+          layout="fill"
+          width={400}
+          height={108}
+        />
       </div>
 
       <div className="absolute mt-8 left-10 top-1/2 flex flex-col items-left justify-center z-10 w-[250px]">
