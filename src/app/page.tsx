@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Preloader from '../component/preloader';
+import Preloader from '../component/Preloader';
 import FullScreenImage from './fullpageimage';
 
 function page() {
