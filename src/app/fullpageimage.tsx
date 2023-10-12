@@ -106,7 +106,6 @@ const FullScreenImage = () => {
         <Image
           src="/images/header-logo.png"
           alt="background image"
-          layout="fill"
           width={400}
           height={108}
         />
