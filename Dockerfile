@@ -1,29 +1,23 @@
 # Use an official Node.js runtime as the base image
-FROM node:14 as builder
+FROM node:14-alpine
 
-# Set the working directory in the container
+# Set the working directory within the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the container
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install project dependencies
+# Install app dependencies
 RUN npm install
 
-# Copy the rest of your Next.js application to the container
+# Copy the rest of the app's source code to the working directory
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
+# Build the React app
+#RUN npm run build
 
-# Use a lightweight, official Nginx runtime as the final image
-FROM nginx:alpine
-
-# Copy the built Next.js application from the previous stage to the Nginx web root directory
-COPY --from=builder /app/.next /usr/share/nginx/html
-
-# Expose port 80
+# Expose port 3000 for the application
 EXPOSE 80
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Command to start the application
+CMD ["npm", "start"]
