@@ -15,7 +15,6 @@ const FullScreenImage = () => {
       const europeanCountriesURL = 'https://euro.bakersluxury.com';
       const northAmericaCountriesURL = 'https://us.bakersluxury.com';
 
-      // Redirect based on the selected option
       switch (selected) {
         case 'NG': // Nigeria
           window.location.href = nigeriaURL;
